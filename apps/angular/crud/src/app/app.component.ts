@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 
   update(todo: TodoItem) {
     this.isLoading = true;
-
+    
     zip(
       this.http.updateTodo(todo), 
       this.http.getTodos()
