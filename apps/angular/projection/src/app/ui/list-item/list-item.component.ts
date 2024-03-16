@@ -1,35 +1,32 @@
-import { Component, Input } from '@angular/core';
-import { StudentStore } from '../../data-access/student.store';
-import { TeacherStore } from '../../data-access/teacher.store';
-import { CardType } from '../../model/card.model';
+import { 
+  Component, 
+  EventEmitter, 
+  Input, 
+  Output 
+} from '@angular/core';
+
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-list-item',
   template: `
-    <div class="border border-grey-300 py-1 px-2 flex justify-between">
-      {{ name }}
-      <button (click)="delete(id)">
+    <div class="border border-grey-300 py-1 px-2 flex justify-between">      
+      <ng-content></ng-content>
+      <button (click)="onDelete()">
         <img class="h-5" src="assets/svg/trash.svg" />
       </button>
     </div>
   `,
+  imports: [NgTemplateOutlet],
   standalone: true,
 })
-export class ListItemComponent {
-  @Input() id!: number;
-  @Input() name!: string;
-  @Input() type!: CardType;
+export class ListItemComponent<T> {
+  @Input() item!: T;
+  @Output() delete = new EventEmitter<T>()
 
-  constructor(
-    private teacherStore: TeacherStore,
-    private studentStore: StudentStore
-  ) {}
+  constructor() {}
 
-  delete(id: number) {
-    if (this.type === CardType.TEACHER) {
-      this.teacherStore.deleteOne(id);
-    } else if (this.type === CardType.STUDENT) {
-      this.studentStore.deleteOne(id);
-    }
+  onDelete() {    
+    this.delete.emit(this.item)
   }
 }
