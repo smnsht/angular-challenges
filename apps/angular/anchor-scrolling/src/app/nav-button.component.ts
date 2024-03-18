@@ -16,8 +16,6 @@ import { RouterLink } from '@angular/router';
   },
 })
 export class NavButtonComponent {  
-  @Input() href = '';
-
-  link?: string;
+  @Input() href = '';  
   @Input() fragment?: string;    
 }
