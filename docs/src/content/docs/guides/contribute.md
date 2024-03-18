@@ -1,6 +1,9 @@
 ---
 title: Contribute
 description: Guide to contribute
+contributors:
+  - tomalaforge
+  - jdegand
 sidebar:
   order: 4
 ---
@@ -17,4 +20,4 @@ You can contribute to this repository in many ways:
 
 🔥 File an issue to suggest new challenge ideas or report a bug.
 
-🔥 Sponsor the project [here](https://github.com/sponsors/tomalaforge)
+🔥 Sponsor the project [here](https://github.com/sponsors/tomalaforge).

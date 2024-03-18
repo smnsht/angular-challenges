@@ -7,6 +7,7 @@
   --primary-color: var(--sl-color-bg-nav) !important;
   --cardBgColor: #242526;
 
+  --sl-color-green: #39a549;
   --sl-hue-purple: 41;
   --sl-color-purple-low: hsl(var(--sl-hue-orange), 39%, 22%);
   --sl-color-purple: hsl(var(--sl-hue-orange), 82%, 63%);
@@ -15,6 +16,9 @@
   --color-btn: var(--sl-color-white);
   --color-chip: rgb(35, 38, 47);
   --color-chip-border: rgba(240, 246, 252, 0.1);
+
+  --button-transition: opacity 100ms ease-in-out;
+  --button-hover-opacity: 0.85;
 }
 
 :root[data-theme='light'],
@@ -33,7 +37,7 @@
   border-radius: 6px;
   padding: 2px 8px;
   background-color: rgb(35, 134, 54);
-  color: var(-color-btn);
+  color: var(--color-btn);
 }
 
 .github-neutral-btn {
@@ -47,6 +51,21 @@
   width: fit-content;
   gap: 6px;
   margin: 0px 2px;
+}
+
+a.action,
+.article-footer > a,
+.action-footer > a.action-button {
+  transition: var(--button-transition);
+
+  &:hover {
+    opacity: var(--button-hover-opacity);
+    transition: var(--button-transition);
+
+    &:not(.primary):not(.button-sponsor) {
+      opacity: 0.66;
+    }
+  }
 }
 
 .article-footer {
@@ -72,6 +91,10 @@
   align-items: center;
   margin-top: 0;
   background-color: var(--sl-color-accent-high);
+
+  &.action {
+    color: var(--color-btn);
+  }
 }
 
 .article-footer > a > p {
@@ -140,7 +163,7 @@ starlight-menu-button svg {
 
 .starlight-aside--note .starlight-aside__title,
 .starlight-aside--tip .starlight-aside__title {
-  color: white;
+  color: var(--sl-color-white);
 }
 
 .starlight-aside--danger {
@@ -151,4 +174,14 @@ starlight-menu-button svg {
 
 .starlight-aside--danger .starlight-aside__title {
   color: red;
+}
+
+details {
+  summary {
+    cursor: pointer;
+  }
+}
+
+.body:where(.astro-v5tidmuc) {
+  height: 100%;
 }

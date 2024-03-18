@@ -10,6 +10,7 @@ import { ListItemComponent } from '../../ui/list-item/list-item.component';
 
 @Component({
   selector: 'app-teacher-card',
+<<<<<<< HEAD
   template: `<app-card
     [list]="teachers"
     (addNewClick)="onAddNewClick()"
@@ -21,6 +22,14 @@ import { ListItemComponent } from '../../ui/list-item/list-item.component';
       </app-list-item>
     </ng-template>
   </app-card>`,
+=======
+  template: `
+    <app-card
+      [list]="teachers"
+      [type]="cardType"
+      customClass="bg-light-red"></app-card>
+  `,
+>>>>>>> 17108c32343a872f6320c50f3ecceac619923617
   styles: [
     `
       ::ng-deep .bg-light-red {

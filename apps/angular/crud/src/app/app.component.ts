@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   constructor(private http: AppService) {    
   }
 
+<<<<<<< HEAD
   ngOnInit(): void {    
     this.isLoading = true;
     this.todos$ = this.http.getTodos().pipe(
@@ -50,5 +51,26 @@ export class AppComponent implements OnInit {
       },
       complete: () => this.isLoading = false
     })
+=======
+  update(todo: any) {
+    this.http
+      .put<any>(
+        `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
+        JSON.stringify({
+          todo: todo.id,
+          title: randText(),
+          body: todo.body,
+          userId: todo.userId,
+        }),
+        {
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        },
+      )
+      .subscribe((todoUpdated: any) => {
+        this.todos[todoUpdated.id - 1] = todoUpdated;
+      });
+>>>>>>> 17108c32343a872f6320c50f3ecceac619923617
   }
 }

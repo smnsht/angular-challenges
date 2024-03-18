@@ -1,7 +1,11 @@
 ---
 title: 🟢 @RouterInput()
 description: Challenge 22 is about using the @Input decorator to retreive router params.
-author: Thomas Laforge
+author: thomas-laforge
+contributors:
+  - tomalaforge
+  - tomer953
+  - svenson95
 challengeNumber: 22
 command: angular-router-input
 blogLink: https://medium.com/ngconf/accessing-route-params-in-angular-1f8e12770617
@@ -20,8 +24,7 @@ In this application, we retrieve three pieces of information inside our `TestCom
 In Angular versions 15 or earlier, we use `ActivatedRoute` to obtain all this information and receive them through observables to listen for URL changes.
 
 In version 16, Angular introduced a new `Input` that can listen to route data. You can read more about it [here](https://medium.com/ngconf/accessing-route-params-in-angular-1f8e12770617).
-.
 
 ## Statement
 
-The goal of this exercice is to refactor the code to use the new `RouterInput` strategy.
+The goal of this exercise is to refactor the code to use the new `RouterInput` strategy.

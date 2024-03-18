@@ -1,7 +1,9 @@
 ---
 title: 🟠 Optimize Change Detection
 description: Challenge 12 about optimizing the number of change detection cycle while scrolling
-author: Thomas Laforge
+author: thomas-laforge
+contributors:
+  - tomalaforge
 challengeNumber: 12
 command: performance-scroll-cd
 sidebar:

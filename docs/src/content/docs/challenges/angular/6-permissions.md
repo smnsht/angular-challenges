@@ -1,7 +1,12 @@
 ---
 title: 🟠 Structural Directive
 description: Challenge 6 is about creating a structural directive to handle permissions
-author: Thomas Laforge
+author: thomas-laforge
+contributors:
+  - tomalaforge
+  - tomer953
+  - kabrunko-dev
+  - svenson95
 challengeNumber: 6
 command: angular-permissions
 blogLink: https://medium.com/@thomas.laforge/create-a-custom-structural-directive-to-manage-permissions-like-a-pro-11a1acad30ad
@@ -9,19 +14,18 @@ sidebar:
   order: 102
 ---
 
-:::note
-WIP: The following documentation will be reviewed and improved. However, you can still take on the challenge. If you don't understand a certain part, please feel free to reach out or create an issue.
-:::
-
 ## Information
 
-Structural directive is an important concept you will need to master to improve your angular skills and knowledge. This will be the first part of this challenge.
+Structural directives are directives which change the DOM layout by adding and removing DOM elements. This is an important concept you'll need to improve your angular skills and knowledge. This will be the first part of this challenge. For more information check out the [official documentation](https://angular.io/guide/structural-directives).
 
-Guard is also very important since you will always need it in every application you build.
+Guards like `CanActivate` or `CanMatch` are also very important, since you'll need it in the most application's you build. If you're not very familiar with route guards, check out this two articles.
+
+- [Everything you need to know about route Guard in Angular](https://itnext.io/everything-you-need-to-know-about-route-guard-in-angular-697a062d3198)
+- [Create a route Guard to manage permissions](https://medium.com/@thomas.laforge/create-a-route-guard-to-manage-permissions-26f16cc9a1ca)
 
 ## Statement
 
-In LoginComponent, you will find 6 buttons corresponding at 6 differents users.
+In `LoginComponent` you'll find 6 buttons corresponding to 6 different user's role.
 
 - Admin
 - Manager
@@ -33,12 +37,12 @@ In LoginComponent, you will find 6 buttons corresponding at 6 differents users.
 
 ## Step 1
 
-In **InformationComponent**, display the correct piece of information for each roles.
+In `InformationComponent` you'll need to display the correct piece of information for each role using a structural directive.
 
-### Constraints:
+### Constraints
 
-- no ngIf directive inside **InformationComponent**
-- importing the store inside **InformationComponent** is not allowed.
+- No `ngIf` or `@if` inside `InformationComponent`.
+- Importing the store inside `InformationComponent` is not allowed.
 
 You should end up with something like below:
 
@@ -56,4 +60,4 @@ You should end up with something like below:
 
 ## Step 2
 
-In **Routes.ts**, route all user to the correct **DashboardComponent** using **CanMatch** guard.
+In `Routes.ts` you should route all users to the correct `DashboardComponent` using `CanMatch` guard.
